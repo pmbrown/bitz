@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text | Bitz CSS</title>
+<meta name="description" content="Add site description metadata">
+<meta name="author" content="Phil Brown">
+<script>const storageKey="theme-preference",onClick=()=>{theme.value="light"===theme.value?"dark":"light",setPreference()},getColorPreference=()=>localStorage.getItem(storageKey)?localStorage.getItem(storageKey):window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",setPreference=()=>{localStorage.setItem(storageKey,theme.value),reflectPreference()},reflectPreference=()=>{document.firstElementChild.style.setProperty("color-scheme",theme.value)},theme={value:getColorPreference()};reflectPreference(),window.onload=()=>{reflectPreference(),document.querySelector("#themes").addEventListener("click",onClick)},window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",({matches:e})=>{theme.value=e?"dark":"light",setPreference()});</script>
+<link rel="stylesheet" href="/bitz.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/syntax.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="container px-3 px-0-md" style="--size:60rem;">
+<header class="flex flex-wrap align-items-center py-2 font-size font-weight" style="--fs:0.813rem;--btn-bg:transparent;--btn-py: 0.25rem;--btn-px: 0.5rem;">
+<a href="/" class="decoration-none py-1 px-2 px-3-md" style="--fs:1.125rem;--fw:500;">Bitz CSS</a>
+<button id="themes" class="ms-auto me-2 me-3-md me-1-sm">mode</button>
+<button aria-controls="menu" aria-expanded="false" class="me-3">menu</button>
+
+<nav id="menu" class="mt-2 py-2 py-3-sm" style="--fs:1rem;">
+<ul class="ul-inline gap-c-4 mb-0 px-3">
+
+<li><a href="/examples/typography/">Typography</a></li>
+<li><a href="/examples/forms-buttons/">Forms &amp; buttons</a></li>
+<li><a href="/examples/tables/">Tables</a></li>
+<li><a href="/examples/accordions/">Accordions</a></li>
+<li><a href="/examples/alerts/">Alerts</a></li>
+<li><a href="/examples/badges/">Badges</a></li>
+<li><a href="/examples/cards/">Cards</a></li>
+<li><a href="/examples/modals/">Modals</a></li>
+<li><a href="/examples/images/">Images</a></li>
+<li><a href="/examples/lists/">Lists</a></li>
+<li><a href="/examples/text/" aria-current="page" style="--fw:bold;">Text</a></li>
+<li><a href="/examples/containers/">Containers</a></li>
+<li><a href="/examples/columns/">Columns</a></li>
+<li><a href="/examples/display/">Display</a></li>
+<li><a href="/examples/grid/">Grid</a></li>
+<li><a href="/examples/spacing/">Spacing</a></li>
+</ul>
+</nav>
+</header>
+
+
+<main id="main" class="py-3 px-3">
+<h1>Text</h1>
+<p>Text property value variable modifier classes and basic text utilities.</p>
+<h2 id="examples">Examples <a href="#examples" class="anchor"><span class="vis-hidden">(anchor)</span></a></h2>
+<p>The variable utilities are designed for using in inline styles to quickly modify core font property values, the defined ones provide basic text utilities commonly used in content design.</p>
+<h3 id="variable-utilities">Variable utilities <a href="#variable-utilities" class="anchor"><span class="vis-hidden">(anchor)</span></a></h3>
+<p class="mb-1"><strong>Font family</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;font-family&quot; style=&quot;--ff: Georgia;&quot;&gt;</code></p>
+<p class="font-family" style="--ff: Georgia;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Font sizes</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;font-size&quot; style=&quot;--fs: 1.25rem;&quot;&gt;</code></p>
+<p class="font-size" style="--fs: 1.25rem;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Font weights</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;font-weight&quot; style=&quot;--fw: bold;&quot;&gt;</code></p>
+<p class="font-weight" style="--fw: bold;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Line-height</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;line-height&quot; style=&quot;--lh: 1.1;&quot;&gt;</code></p>
+<p class="surf-1 text-balance line-height" style="--lh: 1.1; max-inline-size: 19rem;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Text-transform</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;text-transform&quot; style=&quot;--tt: uppercase;&quot;&gt;</code></p>
+<p class="surf-1 text-balance text-transform" style="--tt: uppercase;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Font-variant</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;font-variant&quot; style=&quot;--fv: small-caps;&quot;&gt;</code></p>
+<p class="surf-1 text-balance font-variant" style="--fv: small-caps;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Letter and word spacing</strong></p>
+<p class="mb-1"><code>&lt;p class=&quot;text-spacing&quot; style=&quot;--ls: 0.25em;&quot;&gt;</code></p>
+<p class="surf-1 text-balance text-spacing" style="--ls: 0.25em;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><code>&lt;p class=&quot;text-spacing&quot; style=&quot;--ws: 0.125em;&quot;&gt;</code></p>
+<p class="surf-1 text-balance text-spacing" style="--ws: 0.125em;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><code>&lt;p class=&quot;text-spacing&quot; style=&quot;--ls: 0.125em; --ws: -0.125em;&quot;&gt;</code></p>
+<p class="surf-1 text-balance text-spacing" style="--ls: 0.125em; --ws: -0.125em;">The quick brown fox jumped over the lazy dog.</p>
+<h3 id="defined-utilities">Defined utilities <a href="#defined-utilities" class="anchor"><span class="vis-hidden">(anchor)</span></a></h3>
+<p class="mb-1"><strong>Text wrap</strong></p>
+<p class="mb-0"><code>.text-pretty</code></p>
+<p class="text-pretty" style="max-inline-size: 20rem;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-0"><code>.text-balance</code></p>
+<p class="text-balance" style="max-inline-size: 20rem;">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Text alignment</strong></p>
+<p class="mb-0"><code>.text-left</code></p>
+<p class="text-left">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-0 text-center"><code>.text-center</code></p>
+<p class="text-center">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-0 text-right"><code>.text-right</code></p>
+<p class="text-right">The quick brown fox jumped over the lazy dog.</p>
+<p class="mb-1"><strong>Text colors</strong></p>
+<p>Fixed color <code>.text-white</code> and <code>.text-black</code> utilities (background colors included for example only).</p>
+<p class="mb-3"><span class="text-white p-2" style="background:black;">.text-white</span> <span class="text-black p-2" style="background:white;">.text-black</span></p>
+<p class="mb-1"><strong>Links</strong></p>
+<p>Link <code>.decoration-none</code> and <code>.text-link</code> color utilities.</p>
+<p><a href="#" class="decoration-none">Decoration none</a><br>
+<a href="#" class="text-link">Text link</a></p></main>
+
+<footer class="flex-wrap align-items-center justify-content-between pb-3">
+<small class="">Copyright © 2025 Phil Brown | <a href="">Github</a></small> 
+</footer>
+<script>document.querySelector("[aria-controls=menu]").addEventListener("click",function(){var e=document.querySelector("[aria-controls=menu][aria-expanded]");"false"==e.getAttribute("aria-expanded")?e.setAttribute("aria-expanded","true"):e.setAttribute("aria-expanded","false")});</script>
+</body>
+</html>

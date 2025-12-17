@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-au">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Images | Bitz CSS</title>
+<meta name="description" content="Add site description metadata">
+<meta name="author" content="Phil Brown">
+<script>const storageKey="theme-preference",onClick=()=>{theme.value="light"===theme.value?"dark":"light",setPreference()},getColorPreference=()=>localStorage.getItem(storageKey)?localStorage.getItem(storageKey):window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",setPreference=()=>{localStorage.setItem(storageKey,theme.value),reflectPreference()},reflectPreference=()=>{document.firstElementChild.style.setProperty("color-scheme",theme.value)},theme={value:getColorPreference()};reflectPreference(),window.onload=()=>{reflectPreference(),document.querySelector("#themes").addEventListener("click",onClick)},window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",({matches:e})=>{theme.value=e?"dark":"light",setPreference()});</script>
+<link rel="stylesheet" href="/bitz.css">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/syntax.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+
+<body class="container px-3 px-0-md" style="--size:60rem;">
+<header class="flex flex-wrap align-items-center py-2 font-size font-weight" style="--fs:0.813rem;--btn-bg:transparent;--btn-py: 0.25rem;--btn-px: 0.5rem;">
+<a href="/" class="decoration-none py-1 px-2 px-3-md" style="--fs:1.125rem;--fw:500;">Bitz CSS</a>
+<button id="themes" class="ms-auto me-2 me-3-md me-1-sm">mode</button>
+<button aria-controls="menu" aria-expanded="false" class="me-3">menu</button>
+
+<nav id="menu" class="mt-2 py-2 py-3-sm" style="--fs:1rem;">
+<ul class="ul-inline gap-c-4 mb-0 px-3">
+
+<li><a href="/examples/typography/">Typography</a></li>
+<li><a href="/examples/forms-buttons/">Forms &amp; buttons</a></li>
+<li><a href="/examples/tables/">Tables</a></li>
+<li><a href="/examples/accordions/">Accordions</a></li>
+<li><a href="/examples/alerts/">Alerts</a></li>
+<li><a href="/examples/badges/">Badges</a></li>
+<li><a href="/examples/cards/">Cards</a></li>
+<li><a href="/examples/modals/">Modals</a></li>
+<li><a href="/examples/images/" aria-current="page" style="--fw:bold;">Images</a></li>
+<li><a href="/examples/lists/">Lists</a></li>
+<li><a href="/examples/text/">Text</a></li>
+<li><a href="/examples/containers/">Containers</a></li>
+<li><a href="/examples/columns/">Columns</a></li>
+<li><a href="/examples/display/">Display</a></li>
+<li><a href="/examples/grid/">Grid</a></li>
+<li><a href="/examples/spacing/">Spacing</a></li>
+</ul>
+</nav>
+</header>
+
+
+<main id="main" class="py-3 px-3">
+<h1>Images</h1>
+<p>Aspect-ratio and object-fit utilities for images and media content.</p>
+<h2 id="examples">Examples <a href="#examples" class="anchor"><span class="vis-hidden">(anchor)</span></a></h2>
+<p>The aspect-ratio and object-fit utilities can be applied to a single image or a container to apply the styles to child elements. Both options including fixed classes with predefined values and variable classes for customizing inline.</p>
+<h3 id="single-images">Single images <a href="#single-images" class="anchor"><span class="vis-hidden">(anchor)</span></a></h3>
+<p><strong>Fixed</strong></p>
+<div class="flex flex-wrap align-items-start gap-1 mb-3">
+<img src="/examples/img/elephant-480.webp" class="object-cover ratio-3x4" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="180">
+<img src="/examples/img/elephant-480.webp" class="object-cover ratio-1x1" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="180">
+<img src="/examples/img/elephant-480.webp" class="object-cover ratio-16x9" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="180">
+<img src="/examples/img/elephant-480.webp" class="object-cover ratio-5x2" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="180">
+<img src="/examples/img/elephant-480.webp" class="object-cover ratio-4x1" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="180">
+
+</div>
+<details>
+<summary>Example HTML</summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio-3x4&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;180&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio-1x1&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;180&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio-16x9&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;180&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio-5x2&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;180&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio-4x1&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;180&#34;</span><span class="p">&gt;</span></span></span></code></pre></div>
+</details>
+<p><strong>Variable</strong></p>
+<div class="flex flex-wrap align-items-start gap-1 mb-3">
+<img src="/examples/img/desert-480.webp" alt="Desert sand dunes with blue sky background" width="300" class="object-cover ratio" style="--ratio: 15 / 7;">
+<img src="/examples/img/desert-480.webp" alt="Desert sand dunes with blue sky background" width="300" class="object-cover ratio" style="--ratio: 15 / 6;">
+<img src="/examples/img/desert-480.webp" alt="Desert sand dunes with blue sky background" width="300" class="object-cover ratio" style="--ratio: 15 / 5;">
+
+</div>
+<details>
+<summary>Example HTML</summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/desert-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Desert sand dunes with blue sky background&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;--ratio: 15 / 7;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/desert-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Desert sand dunes with blue sky background&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;--ratio: 15 / 6;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/desert-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Desert sand dunes with blue sky background&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;object-cover ratio&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;--ratio: 15 / 5;&#34;</span><span class="p">&gt;</span></span></span></code></pre></div>
+</details>
+<h3 id="child-images">Child images <a href="#child-images" class="anchor"><span class="vis-hidden">(anchor)</span></a></h3>
+<p><strong>Fixed</strong></p>
+<div class="child-object-cover child-ratio-1x1 grid g-2-xs g-4 gap-1 mb-3">
+<img src="/examples/img/rocky-stream-480.webp" alt="A rocky stream next to a small copse of pinetrees on a grassy bank" width="300">
+<img src="/examples/img/red-fox-480.webp" alt="A red fox with one eye blue and the other brown looking directly at camera" width="300">
+<img src="/examples/img/hazy-mountains-480.webp" alt="View of distant mountains and valleys scenery bathed in hazy sunlight" width="300">
+<img src="/examples/img/bird-on-branch-480.webp" alt="A small white and brown bird with orange chest colors sitting on a tree branch" width="300">
+</div>
+<details>
+<summary>Example HTML</summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child-object-cover child-ratio-1x1 grid g-2-xs g-4 gap-1 mb-3&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/rocky-stream-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;A rocky stream next to a small copse of pinetrees on a grassy bank&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/red-fox-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;A red fox with one eye blue and the other brown looking directly at camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/hazy-mountains-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;View of distant mountains and valleys scenery bathed in hazy sunlight&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/bird-on-branch-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;A small white and brown bird with orange chest colors sitting on a tree branch&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+</details>
+<p><strong>Variable</strong></p>
+<div class="child-ratio child-object-cover grid g-2-xs g-4 gap-1 mb-3" style="--ratio: 15 / 7">
+<img src="/examples/img/elephant-480.webp" alt="Head on shot of elephant with big tusks and ears flared staring down camera" width="300">
+<img src="/examples/img/frog-540.webp" alt="Close up of green frog sitting on leaf of tree." width="300">
+<img src="/examples/img/lion-540.webp" alt="Male lion with healthy main staring into distance." width="300">
+<img src="/examples/img/red-fox-480.webp" alt="A red fox with one eye blue and the other brown looking directly at camera" width="300">
+</div>
+<details>
+<summary>Example HTML</summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child-ratio child-object-cover grid g-2-xs g-4 gap-1 mb-3&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;--ratio: 15 / 7&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/elephant-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Head on shot of elephant with big tusks and ears flared staring down camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/frog-540.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Close up of green frog sitting on leaf of tree.&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/lion-540.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Male lion with healthy main staring into distance.&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/red-fox-480.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;A red fox with one eye blue and the other brown looking directly at camera&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;300&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span></span></span></code></pre></div>
+</details>
+<p><strong>Figure elements</strong></p>
+<div class="flex flex-wrap align-items-start gap-1">
+<figure class="child-ratio-16x9 child-object-cover">
+<img src="/examples/img/winter-forest-300.webp" alt="Snowy forest clearing with sunlight filtering through tall trees" width="250">
+<figcaption>Winter forest</figcaption>
+</figure>
+
+<figure class="child-ratio-5x2 child-object-cover">
+<img src="/examples/img/winter-forest-300.webp" alt="Snowy forest clearing with sunlight filtering through tall trees" width="250">
+<figcaption>Winter forest</figcaption>
+</figure>
+
+<figure class="child-ratio-4x1 child-object-cover">
+<img src="/examples/img/winter-forest-300.webp" alt="Snowy forest clearing with sunlight filtering through tall trees" width="250">
+<figcaption>Winter forest</figcaption>
+</figure>
+
+</div>
+<details>
+<summary>Example HTML</summary>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child-ratio-16x9 child-object-cover&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/winter-forest-300.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Snowy forest clearing with sunlight filtering through tall trees&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;250&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Winter forest<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child-ratio-5x2 child-object-cover&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/winter-forest-300.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Snowy forest clearing with sunlight filtering through tall trees&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;250&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Winter forest<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figure</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;child-ratio-4x1 child-object-cover&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;/examples/img/winter-forest-300.webp&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;Snowy forest clearing with sunlight filtering through tall trees&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;250&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">figcaption</span><span class="p">&gt;</span>Winter forest<span class="p">&lt;/</span><span class="nt">figcaption</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">figure</span><span class="p">&gt;</span></span></span></code></pre></div>
+</details></main>
+
+<footer class="flex-wrap align-items-center justify-content-between pb-3">
+<small class="">Copyright © 2025 Phil Brown | <a href="">Github</a></small> 
+</footer>
+<script>document.querySelector("[aria-controls=menu]").addEventListener("click",function(){var e=document.querySelector("[aria-controls=menu][aria-expanded]");"false"==e.getAttribute("aria-expanded")?e.setAttribute("aria-expanded","true"):e.setAttribute("aria-expanded","false")});</script>
+</body>
+</html>
