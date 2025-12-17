@@ -1,0 +1,60 @@
+.chroma {
+  color: CanvasText;
+  background-color: color-mix(in srgb, CanvasText 2%, var(--background, Canvas)); 
+  
+  .hl { 
+    background-color: light-dark(#c8c8fa, #3e4451);
+  }
+  
+  .c, .c1 { 
+    color: light-dark(#565c64, #868e96);
+  }
+  
+  .err, .n, .cp, .gd, .no, .ni, .ne, .py, .nt, .nv, .vc, .vg, .vi { 
+    color: light-dark(#803300, #d98c8c); 
+  }
+    
+  .k, .kc, .kd, .kp, .kr {
+    color: light-dark(#a71d5d, #b3b3ff);
+  }
+
+  .l, .m, .mf, .mh, .mi, .mo, .se, .si, .il { 
+    color: light-dark(#087990, #d19a66);
+  }
+  
+  .o, .p, .nb, .nl, .bp {
+    color: light-dark(#333, #abb2bf);
+  }
+
+  .cm, .cs, .sd, .gp {
+    color: light-dark(#030303, #565c64);
+  }
+  
+  .ge {
+    font-style: italic;
+  }
+  
+  .gh, .w, .sc { 
+    color: CanvasText;
+  }
+    
+  .gp, .gh, .gs, .gu {
+    font-weight: 600;
+  }
+  
+  .gi, .gu, .kn, .ld, .s, .ow, .sb, .s1, .s2, .sh, .sx, .sr, .ss {
+    color: light-dark(#a71d5d, #56b6c2);
+  }
+
+  .kt, .na, .nn, .nx {
+    color: light-dark(#3c2e52, #e5c07b);
+  }
+   
+  .nc, .nd {
+    color: light-dark(#4d3300, #d19a66);
+  }
+
+  .nf {
+    color: light-dark(#183691, #98c379);
+  }
+}
