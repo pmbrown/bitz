@@ -1,0 +1,196 @@
+/*! Bitz v0.1 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
+.ratio,
+.child-ratio *:not(figcaption) {
+  aspect-ratio: var(--ratio);
+}
+
+.ratio-1x1,
+.child-ratio-1x1 *:not(figcaption) {
+  aspect-ratio: 1/1;
+}
+
+.ratio-16x9,
+.child-ratio-16x9 *:not(figcaption) {
+  aspect-ratio: 16/9;
+}
+
+.ratio-5x2,
+.child-ratio-5x2 *:not(figcaption) {
+  aspect-ratio: 5/2;
+}
+
+.ratio-4x1,
+.child-ratio-4x1 *:not(figcaption) {
+  aspect-ratio: 4/1;
+}
+
+.ratio-3x4,
+.child-ratio-3x4 *:not(figcaption) {
+  aspect-ratio: 3/4;
+}
+
+.object-contain,
+.child-object-contain * {
+  object-fit: contain;
+}
+
+.object-cover,
+.child-object-cover * {
+  object-fit: cover;
+}
+
+.object-fill,
+.child-object-fill * {
+  object-fit: fill;
+}
+
+.object-scale,
+.child-object-scale * {
+  object-fit: scale-down;
+}
+
+.ul-none, .ol-none, .ul-inline, .ol-inline, .list-comma, .list-divider {
+  list-style-type: "";
+  padding-inline-start: 0;
+}
+
+.ul-inline, .ol-inline, .list-comma, .list-divider, .dl-comma, .dl-comma-inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ul-inline, .ol-inline {
+  column-gap: var(--gap, 0.75rem);
+}
+
+.list-comma {
+  column-gap: var(--gap, 0.3rem);
+  *:not(:last-child):after {
+    content: ",";
+  }
+}
+
+.list-divider {
+  *:not(:first-child) {
+    padding-inline-start: var(--divider-px, 0.5rem);
+  }
+  *:not(:last-child):after {
+    content: var(--divider, "|");
+    padding-inline-start: var(--divider-px, 0.5rem);
+  }
+}
+
+:is(.dl-none, .dl-meta, .dl-comma, .dl-comma-inline) dd {
+  margin-inline-start: 0;
+}
+
+.dt-bold {
+  dt {
+    font-weight: bold;
+  }
+  :is(.dl-meta, .dl-comma-inline) dt:after {
+    font-weight: 400;
+  }
+}
+
+.dl-meta {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  column-gap: var(--dl-meta-gap, 0.75rem);
+}
+
+.dl-comma, .dl-comma-inline {
+  column-gap: var(--gap, 0.3rem);
+}
+
+:is(.dl-meta, .dl-comma-inline) dt {
+  margin-inline-end: var(--dt-me, 0.15rem);
+}
+
+:is(.dl-meta, .dl-comma-inline) dt:after {
+  content: var(--dt-colon, ":");
+}
+
+.dl-comma {
+  dt {
+    inline-size: 100%;
+  }
+  dt:not(:first-child) {
+    margin-block-start: var(--dt-mt, 0.25rem);
+  }
+}
+
+.dl-comma, .dl-comma-inline {
+  dd:not(:last-child):after {
+    content: var(--content, ",");
+  }
+  dd:not(:last-child):has(+ dt):after {
+    content: "";
+  }
+}
+
+.font-family, .font-family * {
+  font-family: var(--ff);
+}
+
+.font-size, .font-size * {
+  font-size: var(--fs);
+}
+
+.font-weight, .font-weight * {
+  font-weight: var(--fw);
+}
+
+.font-variant {
+  font-variant: var(--fv);
+}
+
+.line-height, .line-height * {
+  line-height: var(--lh);
+}
+
+.text-spacing, .text-spacing * {
+  letter-spacing: var(--ls);
+  word-spacing: var(--ws);
+}
+
+.text-transform, .text-transform * {
+  text-transform: var(--tt);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.decoration-none, .decoration-none * {
+  text-decoration: none;
+}
+
+.text-link, .text-link * {
+  color: CanvasText;
+  text-decoration-color: CanvasText;
+}

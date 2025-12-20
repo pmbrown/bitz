@@ -1,0 +1,365 @@
+//  ------------------------------------------------------------
+//  Display
+//  ------------------------------------------------------------
+@use "sass:map";
+
+$display: (
+  "block": block,
+  "inline": inline,
+  "block-inline": inline-block,
+  "flex": flex,
+  "flex-inline": inline-flex,
+  "grid": grid,
+  "grid-inline": inline-grid,
+) !default;
+
+$flex-direction: (
+  "flex-row": row,
+  "flex-column": column,
+) !default;
+
+$flex-wrap: (
+  "flex-wrap": wrap,
+  "flex-nowrap": nowrap,
+) !default;
+
+$content-items: (
+  "start": start,
+  "end": end,
+  "center": center,
+) !default;
+
+$content-space: (
+  "around": space-around,
+  "between": space-between,
+  "evenly": space-evenly,
+) !default;
+
+$content-space-values:  map.merge($content-items, $content-space);
+
+// Display
+@mixin display-classes {
+  @each $name, $value in $display {
+    .#{$name} {
+      display: #{$value};
+    }
+  }
+}
+
+@mixin display-classes-xl {
+  @each $name, $value in $display {
+    .#{$name}-xl {
+      display: #{$value};
+    }
+  }
+}
+
+@mixin display-classes-lg {
+  @each $name, $value in $display {
+    .#{$name}-lg {
+      display: #{$value};
+    }
+  }
+}
+
+@mixin display-classes-md {
+  @each $name, $value in $display {
+    .#{$name}-md {
+      display: #{$value};
+    }
+  }
+}
+
+@mixin display-classes-sm {
+  @each $name, $value in $display {
+    .#{$name}-sm {
+      display: #{$value};
+    }
+  }
+}
+
+@mixin display-classes-xs {
+  @each $name, $value in $display {
+    .#{$name}-xs {
+      display: #{$value};
+    }
+  }
+}
+
+// Flex - direction, wrap
+@mixin flex-classes {
+  @each $name, $value in $flex-direction {
+    .#{$name} {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name} {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+@mixin flex-classes-xl {
+  @each $name, $value in $flex-direction {
+    .#{$name}-xl {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name}-xl {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+@mixin flex-classes-lg {
+  @each $name, $value in $flex-direction {
+    .#{$name}-lg {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name}-lg {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+@mixin flex-classes-md {
+  @each $name, $value in $flex-direction {
+    .#{$name}-md {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name}-md {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+@mixin flex-classes-sm {
+  @each $name, $value in $flex-direction {
+    .#{$name}-sm {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name}-sm {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+@mixin flex-classes-xs {
+  @each $name, $value in $flex-direction {
+    .#{$name}-xs {
+      flex-direction: #{$value};
+    }
+  }
+
+  @each $name, $value in $flex-wrap {
+    .#{$name}-xs {
+      flex-wrap: #{$value};
+    }
+  }
+}
+
+// Content items - align, justify, place
+@mixin content-items-classes {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name} {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name} {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name} {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name} {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name} {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name} {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin content-items-classes-xl {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name}-xl {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name}-xl {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name}-xl {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name}-xl {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name}-xl {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name}-xl {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin content-items-classes-lg {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name}-lg {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name}-lg {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name}-lg {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name}-lg {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name}-lg {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name}-lg {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin content-items-classes-md {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name}-md {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name}-md {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name}-md {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name}-md {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name}-md {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name}-md {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin content-items-classes-sm {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name}-sm {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name}-sm {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name}-sm {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name}-sm {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name}-sm {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name}-sm {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin content-items-classes-xs {  
+  @each $name, $value in $content-space-values {
+    .align-content-#{$name}-xs {
+      align-content: #{$value};
+    }
+    .justify-content-#{$name}-xs {
+      justify-content: #{$value};
+    }
+    .place-content-#{$name}-xs {
+      place-content: #{$value};
+    }
+  }
+  
+  @each $name, $value in $content-items {
+    .align-items-#{$name}-xs {
+      align-items: #{$value};
+    }
+    .justify-items-#{$name}-xs {
+      justify-items: #{$value};
+    }
+    .place-items-#{$name}-xs {
+      place-items: #{$value};
+    }
+  }  
+}
+
+@mixin display-value-classes {
+  @include display-classes;
+  @include flex-classes;
+  @include content-items-classes;
+}
+
+@mixin display-value-classes-xl {
+  @include display-classes-xl;
+  @include flex-classes-xl;
+  @include content-items-classes-xl;
+}
+
+@mixin display-value-classes-lg {
+  @include display-classes-lg;
+  @include flex-classes-lg;
+  @include content-items-classes-lg;
+}
+
+@mixin display-value-classes-md {
+  @include display-classes-md;
+  @include flex-classes-md;
+  @include content-items-classes-md;
+}
+
+@mixin display-value-classes-sm {
+  @include display-classes-sm;
+  @include flex-classes-sm;
+  @include content-items-classes-sm;
+}
+
+@mixin display-value-classes-xs {
+  @include display-classes-xs;
+  @include flex-classes-xs;
+  @include content-items-classes-xs;
+}

@@ -1,0 +1,61 @@
+// ---------------------------------------------------------- 
+// Grid
+// ----------------------------------------------------------
+$grid-columns:    12 !default;
+
+@mixin grid-classes {
+  [class*=g-] {
+    @for $value from 1 through $grid-columns {
+      --g-#{$value}: repeat(#{$value}, minmax(0, 1fr));
+    }
+    display: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
+  
+  @for $value from 1 through $grid-columns {
+    .g-#{$value} {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}
+
+@mixin grid-classes-xl {
+  @for $value from 1 through $grid-columns {
+    .g-#{$value}-xl {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}
+
+@mixin grid-classes-lg {
+  @for $value from 1 through $grid-columns {
+    .g-#{$value}-lg {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}
+
+@mixin grid-classes-md {
+  @for $value from 1 through $grid-columns {
+    .g-#{$value}-md {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}
+
+@mixin grid-classes-sm {
+  @for $value from 1 through $grid-columns {
+    .g-#{$value}-sm {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}
+
+@mixin grid-classes-xs {
+  @for $value from 1 through $grid-columns {
+    .g-#{$value}-xs {
+      --gtc: var(--g-#{$value});
+    }
+  }
+}

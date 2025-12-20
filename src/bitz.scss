@@ -1,0 +1,46 @@
+// Bitz
+@use "license";
+@use "content";
+@use "components";
+@use "utilities";
+@use "layout" as *;
+
+@include columns-classes;
+@include display-value-classes;
+@include grid-classes;
+@include spacing-classes;
+
+@media (width <= 1440px) {
+  @include columns-classes-xl;
+  @include display-value-classes-xl;
+  @include grid-classes-xl;
+  @include spacing-classes-xl;
+}
+
+@media (width <= 1280px) {
+  @include columns-classes-lg;
+  @include display-value-classes-lg;
+  @include grid-classes-lg;
+  @include spacing-classes-lg;
+}
+
+@media (width <= 1024px) {
+  @include columns-classes-md;
+  @include display-value-classes-md;
+  @include grid-classes-md;
+  @include spacing-classes-md;
+}
+
+@media (width <= 768px) {
+  @include columns-classes-sm;
+  @include display-value-classes-sm;
+  @include grid-classes-sm;
+  @include spacing-classes-sm;
+}
+
+@media (width <= 480px) {
+  @include columns-classes-xs;
+  @include display-value-classes-xs;
+  @include grid-classes-xs;
+  @include spacing-classes-xs;
+}

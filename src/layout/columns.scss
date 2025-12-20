@@ -1,0 +1,56 @@
+// ---------------------------------------------------------- 
+// Columns
+// ----------------------------------------------------------
+$column-values:   6 !default;
+
+@mixin columns-classes {
+  .columns {
+    columns: var(--cols);
+  }
+  
+  @for $value from 1 through $column-values {
+    .columns-#{$value} {
+      columns: $value;
+    }
+  }
+}
+
+@mixin columns-classes-xl {
+  @for $value from 1 through $column-values {
+    .columns-#{$value}-xl {
+      columns: $value;
+    }
+  }
+}
+
+@mixin columns-classes-lg {
+  @for $value from 1 through $column-values {
+    .columns-#{$value}-lg {
+      columns: $value;
+    }
+  }
+}
+
+@mixin columns-classes-md {
+  @for $value from 1 through $column-values {
+    .columns-#{$value}-md {
+      columns: $value;
+    }
+  }
+}
+
+@mixin columns-classes-sm {
+  @for $value from 1 through $column-values {
+    .columns-#{$value}-sm {
+      columns: $value;
+    }
+  }
+}
+
+@mixin columns-classes-xs {
+  @for $value from 1 through $column-values {
+    .columns-#{$value}-xs {
+      columns: $value;
+    }
+  }
+}

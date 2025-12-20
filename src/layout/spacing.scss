@@ -1,0 +1,472 @@
+//  ------------------------------------------------------------
+//  Spacing - gaps, margins, padding
+//  ------------------------------------------------------------
+@use "sass:map";
+
+$spacing: (
+  "0": 0,
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 1rem,
+  "4": 1.5rem,
+  "5": 2rem,
+) !default;
+
+$auto: (
+  "auto": auto,
+) !default;
+
+$spacing-auto:    map.merge($auto, $spacing);
+$gaps:            () !default;
+$margins:         () !default;
+$padding:         () !default;
+$gap-values:      map.merge($spacing, $gaps);
+$margin-values:   map.merge($spacing-auto, $margins);
+$padding-values:  map.merge($spacing, $padding);
+
+// Gaps
+@mixin gap-classes {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name} {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name} {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name} {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+@mixin gap-classes-xl {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name}-xl {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name}-xl {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name}-xl {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+@mixin gap-classes-lg {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name}-lg {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name}-lg {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name}-lg {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+@mixin gap-classes-md {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name}-md {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name}-md {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name}-md {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+@mixin gap-classes-sm {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name}-sm {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name}-sm {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name}-sm {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+@mixin gap-classes-xs {  
+  @each $name, $value in $gap-values {
+  .gap-#{$name}-xs {
+      gap: #{$value};        
+    }
+
+  .gap-c-#{$name}-xs {
+      column-gap: #{$value};        
+    }
+
+  .gap-r-#{$name}-xs {
+      row-gap: #{$value};        
+    }
+  }
+}
+
+// Margins
+@mixin margin-classes {
+  @each $name, $value in $margin-values {
+    .m-#{$name} {
+      margin: #{$value};        
+    }
+    .mt-#{$name} {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name} {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name} {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name} {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name} {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name} {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+@mixin margin-classes-xl {
+  @each $name, $value in $margin-values {
+    .m-#{$name}-xl {
+      margin: #{$value};        
+    }
+    .mt-#{$name}-xl {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name}-xl {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name}-xl {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name}-xl {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name}-xl {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name}-xl {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+@mixin margin-classes-lg {
+  @each $name, $value in $margin-values {
+    .m-#{$name}-lg {
+      margin: #{$value};        
+    }
+    .mt-#{$name}-lg {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name}-lg {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name}-lg {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name}-lg {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name}-lg {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name}-lg {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+@mixin margin-classes-md {
+  @each $name, $value in $margin-values {
+    .m-#{$name}-md {
+      margin: #{$value};        
+    }
+    .mt-#{$name}-md {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name}-md {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name}-md {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name}-md {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name}-md {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name}-md {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+@mixin margin-classes-sm {
+  @each $name, $value in $margin-values {
+    .m-#{$name}-sm {
+      margin: #{$value};        
+    }
+    .mt-#{$name}-sm {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name}-sm {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name}-sm {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name}-sm {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name}-sm {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name}-sm {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+@mixin margin-classes-xs {
+  @each $name, $value in $margin-values {
+    .m-#{$name}-xs {
+      margin: #{$value};        
+    }
+    .mt-#{$name}-xs {
+      margin-block-start: #{$value};        
+    }
+    .mb-#{$name}-xs {
+      margin-block-end: #{$value};        
+    }
+    .ms-#{$name}-xs {
+      margin-inline-start: #{$value};        
+    }
+    .me-#{$name}-xs {
+      margin-inline-end: #{$value};        
+    }
+    .my-#{$name}-xs {
+      margin-block: #{$value};        
+    }
+    .mx-#{$name}-xs {
+      margin-inline: #{$value};        
+    }
+  }
+}
+
+// Padding
+@mixin padding-classes {
+  @each $name, $value in $padding-values {
+    .p-#{$name} {
+      padding: #{$value};        
+    }
+    .pt-#{$name} {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name} {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name} {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name} {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name} {
+      padding-block: #{$value};        
+    }
+    .px-#{$name} {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin padding-classes-xl {
+  @each $name, $value in $padding-values {
+    .p-#{$name}-xl {
+      padding: #{$value};        
+    }
+    .pt-#{$name}-xl {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name}-xl {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name}-xl {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name}-xl {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name}-xl {
+      padding-block: #{$value};        
+    }
+    .px-#{$name}-xl {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin padding-classes-lg {
+  @each $name, $value in $padding-values {
+    .p-#{$name}-lg {
+      padding: #{$value};        
+    }
+    .pt-#{$name}-lg {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name}-lg {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name}-lg {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name}-lg {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name}-lg {
+      padding-block: #{$value};        
+    }
+    .px-#{$name}-lg {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin padding-classes-md {
+  @each $name, $value in $padding-values {
+    .p-#{$name}-md {
+      padding: #{$value};        
+    }
+    .pt-#{$name}-md {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name}-md {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name}-md {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name}-md {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name}-md {
+      padding-block: #{$value};        
+    }
+    .px-#{$name}-md {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin padding-classes-sm {
+  @each $name, $value in $padding-values {
+    .p-#{$name}-sm {
+      padding: #{$value};        
+    }
+    .pt-#{$name}-sm {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name}-sm {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name}-sm {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name}-sm {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name}-sm {
+      padding-block: #{$value};        
+    }
+    .px-#{$name}-sm {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin padding-classes-xs {
+  @each $name, $value in $padding-values {
+    .p-#{$name}-xs {
+      padding: #{$value};        
+    }
+    .pt-#{$name}-xs {
+      padding-block-start: #{$value};        
+    }
+    .pb-#{$name}-xs {
+      padding-block-end: #{$value};        
+    }
+    .ps-#{$name}-xs {
+      padding-inline-start: #{$value};        
+    }
+    .pe-#{$name}-xs {
+      padding-inline-end: #{$value};        
+    }
+    .py-#{$name}-xs {
+      padding-block: #{$value};        
+    }
+    .px-#{$name}-xs {
+      padding-inline: #{$value};        
+    }
+  }
+}
+
+@mixin spacing-classes {
+  @include gap-classes;
+  @include margin-classes;
+  @include padding-classes;
+}
+
+@mixin spacing-classes-xl {
+  @include gap-classes-xl;
+  @include margin-classes-xl;
+  @include padding-classes-xl;
+}
+
+@mixin spacing-classes-lg {
+  @include gap-classes-lg;
+  @include margin-classes-lg;
+  @include padding-classes-lg;
+}
+
+@mixin spacing-classes-md {
+  @include gap-classes-md;
+  @include margin-classes-md;
+  @include padding-classes-md;
+}
+
+@mixin spacing-classes-sm {
+  @include gap-classes-sm;
+  @include margin-classes-sm;
+  @include padding-classes-sm;
+}
+
+@mixin spacing-classes-xs {
+  @include gap-classes-xs;
+  @include margin-classes-xs;
+  @include padding-classes-xs;
+}
