@@ -2,15 +2,17 @@
 @use "license";
 @use "content";
 @use "components";
-@use "utilities";
+@use "utilities" as *;
 @use "layout" as *;
 
+@include border-classes;
 @include columns-classes;
 @include display-value-classes;
 @include grid-classes;
 @include spacing-classes;
 
 @media (width <= 1440px) {
+  @include border-classes-xl;
   @include columns-classes-xl;
   @include display-value-classes-xl;
   @include grid-classes-xl;
@@ -18,6 +20,7 @@
 }
 
 @media (width <= 1280px) {
+  @include border-classes-lg;
   @include columns-classes-lg;
   @include display-value-classes-lg;
   @include grid-classes-lg;
@@ -25,6 +28,7 @@
 }
 
 @media (width <= 1024px) {
+  @include border-classes-md;
   @include columns-classes-md;
   @include display-value-classes-md;
   @include grid-classes-md;
@@ -32,6 +36,7 @@
 }
 
 @media (width <= 768px) {
+  @include border-classes-sm;
   @include columns-classes-sm;
   @include display-value-classes-sm;
   @include grid-classes-sm;
@@ -39,6 +44,7 @@
 }
 
 @media (width <= 480px) {
+  @include border-classes-xs;
   @include columns-classes-xs;
   @include display-value-classes-xs;
   @include grid-classes-xs;

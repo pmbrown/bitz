@@ -1,0 +1,91 @@
+// ---------------------------------------------------------- 
+// Borders
+// ----------------------------------------------------------
+$borders: (
+  "bd": border-style,
+  "bd-t": border-block-start-style,
+  "bd-b": border-block-end-style,
+  "bd-y": border-block-style,
+  "bd-x": border-inline-style,
+  "bd-s": border-inline-start-style,
+  "bd-e": border-inline-end-style,
+) !default;
+
+@mixin border-classes {
+  .bd, 
+  [class*=bd-] {
+    border-width: var(--bd-width, 1px);
+    border-color: var(--bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  }
+  
+  @each $name, $value in $borders {
+    .#{$name} {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none {
+      #{$value}: none;        
+    }    
+  }
+}
+
+@mixin border-classes-xl {
+  @each $name, $value in $borders {
+    .#{$name}-xl {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none-xl {
+      #{$value}: none;        
+    }    
+  }
+}
+
+@mixin border-classes-lg {
+  @each $name, $value in $borders {
+    .#{$name}-lg {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none-lg {
+      #{$value}: none;        
+    }    
+  }
+}
+
+@mixin border-classes-md {
+  @each $name, $value in $borders {
+    .#{$name}-md {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none-md {
+      #{$value}: none;        
+    }    
+  }
+}
+
+@mixin border-classes-sm {
+  @each $name, $value in $borders {
+    .#{$name}-sm {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none-sm {
+      #{$value}: none;        
+    }    
+  }
+}
+
+@mixin border-classes-xs {
+  @each $name, $value in $borders {
+    .#{$name}-xs {
+      #{$value}: var(--bd-style, solid);        
+    }
+    
+    .#{$name}-none-xs {
+      #{$value}: none;        
+    }    
+  }
+}
+
