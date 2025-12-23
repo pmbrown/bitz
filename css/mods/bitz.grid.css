@@ -1,5 +1,5 @@
 /*! Bitz v0.1 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
-[class*=g-] {
+:where(html) {
   --g-1: repeat(1, minmax(0, 1fr));
   --g-2: repeat(2, minmax(0, 1fr));
   --g-3: repeat(3, minmax(0, 1fr));
@@ -12,7 +12,10 @@
   --g-10: repeat(10, minmax(0, 1fr));
   --g-11: repeat(11, minmax(0, 1fr));
   --g-12: repeat(12, minmax(0, 1fr));
-  display: grid;
+}
+
+.grid {
+  grid: grid;
   grid-template-columns: var(--gtc);
   grid-template-rows: var(--gtr);
 }
@@ -66,6 +69,11 @@
 }
 
 @media (width <= 1440px) {
+  .grid-xl {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-xl {
     --gtc: var(--g-1);
   }
@@ -104,6 +112,11 @@
   }
 }
 @media (width <= 1280px) {
+  .grid-lg {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-lg {
     --gtc: var(--g-1);
   }
@@ -142,6 +155,11 @@
   }
 }
 @media (width <= 1024px) {
+  .grid-md {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-md {
     --gtc: var(--g-1);
   }
@@ -180,6 +198,11 @@
   }
 }
 @media (width <= 768px) {
+  .grid-sm {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-sm {
     --gtc: var(--g-1);
   }
@@ -218,6 +241,11 @@
   }
 }
 @media (width <= 480px) {
+  .grid-xs {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-xs {
     --gtc: var(--g-1);
   }

@@ -554,6 +554,81 @@ dialog[open]:is(.alert, [class*=alert-]) {
   }
 }
 
+.dropdown {
+  details {
+    margin-block-end: 0;
+    summary {
+      list-style-type: "";
+      position: relative;
+      display: inline-block;
+      z-index: 1;
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+    :is([open] summary) {
+      margin-block-end: 0;
+    }
+  }
+  summary:after {
+    --svg: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m8 10-4-4h8z'/></svg>");
+    display: inline-block;
+    content: "";
+    block-size: 1em;
+    inline-size: 1em;
+    vertical-align: -0.115em;
+    background-color: var(--dropdown-ico, CanvasText);
+    mask: var(--svg) no-repeat;
+    margin-inline-start: 0.2rem;
+  }
+  [open] summary:after {
+    --svg: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m8 6 4 4-8 7e-7z'/></svg>");
+  }
+  [open]::details-content {
+    color: var(--dropdown-text, CanvasText);
+    position: absolute;
+    inline-size: var(--dropdown-min, fit-content);
+    max-inline-size: var(--dropdown-max, 14rem);
+    margin-block-start: var(--dropdown-top, 0.25rem);
+    border: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+    border-radius: var(--dropdown-radius, 0.188rem);
+    background-color: var(--dropdown-bg, var(--background, Canvas));
+    z-index: 2;
+  }
+  .dropdown-links {
+    &:is(ul, li) {
+      list-style-type: "";
+      margin-block-end: 0;
+      padding-inline-start: 0;
+    }
+    *:not(:first-child) {
+      border-block-start: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+    }
+    *:first-child {
+      border-start-start-radius: calc(var(--dropdown-radius, 0.188rem) - 1px);
+      border-start-end-radius: calc(var(--dropdown-radius, 0.188rem) - 1px);
+    }
+    *:last-child {
+      border-end-start-radius: calc(var(--dropdown-radius, 0.188rem) - 1px);
+      border-end-end-radius: calc(var(--dropdown-radius, 0.188rem) - 1px);
+    }
+    a {
+      text-decoration: none;
+      display: block;
+      padding-block: var(--dropdown-py, 0.313rem);
+      padding-inline: var(--dropdown-px, 0.9rem);
+      background-color: var(--dropdown-bg, var(--background, Canvas));
+      &:is(:hover, :focus) {
+        background-color: var(--dropdown-link-hover, color-mix(in srgb, CanvasText 10%, var(--background, Canvas)));
+      }
+    }
+  }
+  .dropdown-body {
+    padding-block: var(--dropdown-body-py, 1rem);
+    padding-inline: var(--dropdown-px, 0.9rem);
+  }
+}
+
 [popover], dialog {
   color: var(--modal-text, var(--text, CanvasText));
   block-size: var(--modal-block, fit-content);
@@ -607,6 +682,34 @@ dialog[open]:is(.alert, [class*=alert-]) {
     margin-block-start: auto;
     border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
+}
+
+.bg-color,
+[class*=bg-color-] {
+  color: var(--fg, CanvasText);
+  background-color: var(--bg);
+}
+
+.bg-color-light {
+  color-scheme: light;
+  --bg: var(--background, Canvas);
+}
+
+.bg-color-dark {
+  color-scheme: dark;
+  --bg: var(--background, Canvas);
+}
+
+.bg-gradient-1 {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.175), rgba(255, 255, 255, 0));
+}
+
+.bg-gradient-2 {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.225), rgba(255, 255, 255, 0));
+}
+
+.bg-gradient-3 {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0));
 }
 
 .ratio,
@@ -803,6 +906,38 @@ dialog[open]:is(.alert, [class*=alert-]) {
 .text-link, .text-link * {
   color: CanvasText;
   text-decoration-color: CanvasText;
+}
+
+.box-shadow-1 {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-2 {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow-3 {
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
+}
+
+.box-shadow-4 {
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.175);
+}
+
+.text-shadow-1 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.33);
+}
+
+.text-shadow-2 {
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-3 {
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-4 {
+  text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.4);
 }
 
 .container,
@@ -1095,7 +1230,7 @@ dialog[open]:is(.alert, [class*=alert-]) {
   place-items: center;
 }
 
-[class*=g-] {
+:where(html) {
   --g-1: repeat(1, minmax(0, 1fr));
   --g-2: repeat(2, minmax(0, 1fr));
   --g-3: repeat(3, minmax(0, 1fr));
@@ -1108,7 +1243,10 @@ dialog[open]:is(.alert, [class*=alert-]) {
   --g-10: repeat(10, minmax(0, 1fr));
   --g-11: repeat(11, minmax(0, 1fr));
   --g-12: repeat(12, minmax(0, 1fr));
-  display: grid;
+}
+
+.grid {
+  grid: grid;
   grid-template-columns: var(--gtc);
   grid-template-rows: var(--gtr);
 }
@@ -1772,6 +1910,11 @@ dialog[open]:is(.alert, [class*=alert-]) {
   .place-items-center-xl {
     place-items: center;
   }
+  .grid-xl {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-xl {
     --gtc: var(--g-1);
   }
@@ -2310,6 +2453,11 @@ dialog[open]:is(.alert, [class*=alert-]) {
   }
   .place-items-center-lg {
     place-items: center;
+  }
+  .grid-lg {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
   }
   .g-1-lg {
     --gtc: var(--g-1);
@@ -2850,6 +2998,11 @@ dialog[open]:is(.alert, [class*=alert-]) {
   .place-items-center-md {
     place-items: center;
   }
+  .grid-md {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-md {
     --gtc: var(--g-1);
   }
@@ -3389,6 +3542,11 @@ dialog[open]:is(.alert, [class*=alert-]) {
   .place-items-center-sm {
     place-items: center;
   }
+  .grid-sm {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-sm {
     --gtc: var(--g-1);
   }
@@ -3927,6 +4085,11 @@ dialog[open]:is(.alert, [class*=alert-]) {
   }
   .place-items-center-xs {
     place-items: center;
+  }
+  .grid-xs {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
   }
   .g-1-xs {
     --gtc: var(--g-1);

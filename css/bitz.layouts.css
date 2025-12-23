@@ -227,7 +227,7 @@
   place-items: center;
 }
 
-[class*=g-] {
+:where(html) {
   --g-1: repeat(1, minmax(0, 1fr));
   --g-2: repeat(2, minmax(0, 1fr));
   --g-3: repeat(3, minmax(0, 1fr));
@@ -240,7 +240,10 @@
   --g-10: repeat(10, minmax(0, 1fr));
   --g-11: repeat(11, minmax(0, 1fr));
   --g-12: repeat(12, minmax(0, 1fr));
-  display: grid;
+}
+
+.grid {
+  grid: grid;
   grid-template-columns: var(--gtc);
   grid-template-rows: var(--gtr);
 }
@@ -862,6 +865,11 @@
   .place-items-center-xl {
     place-items: center;
   }
+  .grid-xl {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-xl {
     --gtc: var(--g-1);
   }
@@ -1358,6 +1366,11 @@
   }
   .place-items-center-lg {
     place-items: center;
+  }
+  .grid-lg {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
   }
   .g-1-lg {
     --gtc: var(--g-1);
@@ -1856,6 +1869,11 @@
   .place-items-center-md {
     place-items: center;
   }
+  .grid-md {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-md {
     --gtc: var(--g-1);
   }
@@ -2353,6 +2371,11 @@
   .place-items-center-sm {
     place-items: center;
   }
+  .grid-sm {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
+  }
   .g-1-sm {
     --gtc: var(--g-1);
   }
@@ -2849,6 +2872,11 @@
   }
   .place-items-center-xs {
     place-items: center;
+  }
+  .grid-xs {
+    grid: grid;
+    grid-template-columns: var(--gtc);
+    grid-template-rows: var(--gtr);
   }
   .g-1-xs {
     --gtc: var(--g-1);
