@@ -243,7 +243,7 @@
 }
 
 .grid {
-  grid: grid;
+  display: grid;
   grid-template-columns: var(--gtc);
   grid-template-rows: var(--gtr);
 }
@@ -866,7 +866,7 @@
     place-items: center;
   }
   .grid-xl {
-    grid: grid;
+    display: grid;
     grid-template-columns: var(--gtc);
     grid-template-rows: var(--gtr);
   }
@@ -1368,7 +1368,7 @@
     place-items: center;
   }
   .grid-lg {
-    grid: grid;
+    display: grid;
     grid-template-columns: var(--gtc);
     grid-template-rows: var(--gtr);
   }
@@ -1870,7 +1870,7 @@
     place-items: center;
   }
   .grid-md {
-    grid: grid;
+    display: grid;
     grid-template-columns: var(--gtc);
     grid-template-rows: var(--gtr);
   }
@@ -2372,7 +2372,7 @@
     place-items: center;
   }
   .grid-sm {
-    grid: grid;
+    display: grid;
     grid-template-columns: var(--gtc);
     grid-template-rows: var(--gtr);
   }
@@ -2874,7 +2874,7 @@
     place-items: center;
   }
   .grid-xs {
-    grid: grid;
+    display: grid;
     grid-template-columns: var(--gtc);
     grid-template-rows: var(--gtr);
   }

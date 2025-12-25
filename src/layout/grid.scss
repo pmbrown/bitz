@@ -4,7 +4,7 @@
 $grid-columns:    12 !default;
 
 $grid-wrapper: (
-  "grid": grid,
+  "display": grid,
   "grid-template-columns": var(--gtc),
   "grid-template-rows": var(--gtr),
 ) !default;
