@@ -714,7 +714,8 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
   }
 }
 
-[popover], dialog {
+.modal,
+[class*=modal-] {
   color: var(--modal-text, var(--text, CanvasText));
   block-size: var(--modal-block, fit-content);
   max-block-size: var(--modal-height, calc(100dvh - 2rem));
@@ -817,9 +818,9 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
   aspect-ratio: 5/2;
 }
 
-.ratio-4x1,
-.child-ratio-4x1 *:not(figcaption) {
-  aspect-ratio: 4/1;
+.ratio-3x1,
+.child-ratio-3x1 *:not(figcaption) {
+  aspect-ratio: 3/1;
 }
 
 .ratio-3x4,
@@ -1026,49 +1027,49 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
 .container,
 [class*=container-] {
   inline-size: 100%;
-  max-inline-size: var(--size);
+  max-inline-size: var(--width);
   margin-inline: var(--mx, auto);
   padding-inline: var(--px);
 }
 
 .container-xl {
-  --size: 1440px;
+  --width: 1440px;
 }
 
 .container-lg {
-  --size: 1280px;
+  --width: 1280px;
 }
 
 .container-md {
-  --size: 1024px;
+  --width: 1024px;
 }
 
 .container-sm {
-  --size: 768px;
+  --width: 768px;
 }
 
 .container-xs {
-  --size: 480px;
+  --width: 480px;
 }
 
 .container-rem-xl {
-  --size: 100rem;
+  --width: 100rem;
 }
 
 .container-rem-lg {
-  --size: 80rem;
+  --width: 80rem;
 }
 
 .container-rem-md {
-  --size: 64rem;
+  --width: 64rem;
 }
 
 .container-rem-sm {
-  --size: 48rem;
+  --width: 48rem;
 }
 
 .container-rem-xs {
-  --size: 30rem;
+  --width: 30rem;
 }
 
 .bd,

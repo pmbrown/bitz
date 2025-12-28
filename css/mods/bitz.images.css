@@ -19,9 +19,9 @@
   aspect-ratio: 5/2;
 }
 
-.ratio-4x1,
-.child-ratio-4x1 *:not(figcaption) {
-  aspect-ratio: 4/1;
+.ratio-3x1,
+.child-ratio-3x1 *:not(figcaption) {
+  aspect-ratio: 3/1;
 }
 
 .ratio-3x4,

@@ -286,7 +286,8 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
   }
 }
 
-[popover], dialog {
+.modal,
+[class*=modal-] {
   color: var(--modal-text, var(--text, CanvasText));
   block-size: var(--modal-block, fit-content);
   max-block-size: var(--modal-height, calc(100dvh - 2rem));
