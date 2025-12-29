@@ -126,7 +126,7 @@ dialog[open]:is(.alert, [class*=alert-]) {
   }
 }
 
-details:has(.dropdown, .dropdown-list, .dropdown-body) {
+details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
   margin-block-end: var(--dropdown-mb, 1rem);
   summary {
     list-style-type: "";
@@ -154,78 +154,69 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
   :is([open] summary):after {
     --svg: url("data:image/svg+xml,<svg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'><path d='m8 6 4 4-8 7e-7z'/></svg>");
   }
-}
-
-.dropdown, .dropdown-list, .dropdown-body {
-  color: var(--dropdown-text, CanvasText);
-  position: absolute;
-  inline-size: var(--dropdown-min, fit-content);
-  max-inline-size: var(--dropdown-max, 14rem);
-  margin-block-start: var(--dropdown-top, 0.25rem);
-  border: var(--dropdown-bd-width, var(--border-width, 1px)) solid var(--dropdown-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
-  border-radius: var(--dropdown-radius, var(--border-radius, 0.188rem));
-  background-color: var(--dropdown-bg, var(--background, Canvas));
-  z-index: 2;
-}
-
-.dropdown :is(a, button):not(:first-child),
-.dropdown-list li:not(:first-child) {
-  border-block-start: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
-}
-
-.dropdown :first-child:is(a, button),
-.dropdown-list li:first-child *:is(a, button) {
-  border-start-start-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
-  border-start-end-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
-}
-
-.dropdown :last-child:is(a, button),
-.dropdown-list li:last-child *:is(a, button) {
-  border-end-start-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
-  border-end-end-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
-}
-
-.dropdown {
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-list {
-  list-style-type: "";
-  margin-block-end: 0;
-  padding-inline-start: 0;
-}
-
-.dropdown, .dropdown-list {
-  a {
-    text-decoration: none;
-    display: block;
-  }
-  button {
-    inline-size: 100%;
-    border: none;
-    border-radius: 0;
-  }
-  a, button {
-    padding-block: var(--dropdown-py, 0.375rem);
-    padding-inline: var(--dropdown-px, 0.9rem);
+  .dropdown, [class*=dropdown-], [class*=dropdown-body-] {
+    color: var(--dropdown-text, CanvasText);
+    position: absolute;
+    inline-size: var(--dropdown-min, fit-content);
+    max-inline-size: var(--dropdown-max, 14rem);
+    margin-block-start: var(--dropdown-top, 0.25rem);
+    border: var(--dropdown-bd-width, var(--border-width, 1px)) solid var(--dropdown-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-radius: var(--dropdown-radius, var(--border-radius, 0.188rem));
     background-color: var(--dropdown-bg, var(--background, Canvas));
-    &:is(:hover, :focus) {
-      outline: none;
-      background-color: var(--dropdown-link-hover, color-mix(in srgb, CanvasText 10%, var(--background, Canvas)));
+    z-index: 2;
+  }
+  :is(.dropdown, [class*=dropdown-]:not(.dropdown-body, [class*=dropdown-body-])) {
+    display: flex;
+    flex-direction: column;
+    &:is(ul, ol) {
+      list-style-type: "";
+      margin-block-end: 0;
+      padding-inline-start: 0;
+    }
+    a {
+      text-decoration: none;
+      display: block;
+    }
+    button {
+      inline-size: 100%;
+      border: none;
+      border-radius: 0;
+    }
+    a, button {
+      padding-block: var(--dropdown-py, 0.375rem);
+      padding-inline: var(--dropdown-px, 0.9rem);
+      background-color: var(--dropdown-bg, var(--background, Canvas));
+      &:is(:hover, :focus) {
+        outline: none;
+        background-color: var(--dropdown-link-hover, color-mix(in srgb, CanvasText 10%, var(--background, Canvas)));
+      }
+    }
+    &:not(ul, ol) :is(a, button):not(:first-child),
+    &:is(ul, ol) li:not(:first-child) {
+      border-block-start: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+    }
+    &:not(ul, ol) :first-child:is(a, button),
+    &:is(ul, ol) li:first-child *:is(a, button) {
+      border-start-start-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
+      border-start-end-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
+    }
+    &:not(ul, ol) :last-child:is(a, button),
+    &:is(ul, ol) li:last-child *:is(a, button) {
+      border-end-start-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
+      border-end-end-radius: calc(var(--dropdown-radius, var(--border-radius, 0.188rem)) - var(--dropdown-bd-width, var(--border-width, 1px)));
+    }
+  }
+  .dropdown-body, [class*=dropdown-body-] {
+    padding-block: var(--dropdown-body-py, 1rem);
+    padding-inline: var(--dropdown-px, 0.9rem);
+    *:not(:last-child) {
+      margin-block-end: 0.5rem;
     }
   }
 }
 
-.dropdown-body {
-  padding-block: var(--dropdown-body-py, 1rem);
-  padding-inline: var(--dropdown-px, 0.9rem);
-  *:not(:last-child) {
-    margin-block-end: 0.5rem;
-  }
-}
-
-.list-group, .list-links {
+.list-group, .list-links,
+[class*=list-group-], [class*=list-links-] {
   color: var(--list-group-text, CanvasText);
   max-inline-size: var(--list-group-width);
   border: var(--list-group-bd-width, var(--border-width, 1px)) solid var(--list-group-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
@@ -244,45 +235,43 @@ details:has(.dropdown, .dropdown-list, .dropdown-body) {
       counter-increment: ol-list;
     }
   }
+  &:is(.list-group, [class*=list-group-]):is(ol) li:before,
+  &:is(.list-links, [class*=list-links-]):is(ol) li a:before {
+    content: counter(ol-list) ". ";
+    margin-inline-end: 0.25rem;
+  }
+  &:is(.list-group, [class*=list-group-]) :is(li, dt, dd),
+  &:is(.list-links, [class*=list-links-]) dt:not(:has(a)) {
+    padding-block: var(--list-group-py, 0.5rem);
+    padding-inline: var(--list-group-px, 0.75rem);
+  }
   dt {
     font-weight: var(--dt-fw, 500);
   }
   dd {
     margin-inline-start: 0;
   }
-}
-
-.list-group:is(ol) li:before,
-.list-links:is(ol) li a:before {
-  content: counter(ol-list) ". ";
-  margin-inline-end: 0.25rem;
-}
-
-:is(.list-group :is(li, dt, dd), .list-links dt:not(:has(a))) {
-  padding-block: var(--list-group-py, 0.5rem);
-  padding-inline: var(--list-group-px, 0.75rem);
-}
-
-.list-links {
-  a {
-    text-decoration: none;
-    display: block;
-    padding-block: var(--list-group-py, 0.5rem);
-    padding-inline: var(--list-group-px, 0.75rem);
-    &:is(:hover, :focus) {
-      background-color: var(--list-group-hover, color-mix(in srgb, CanvasText 5%, var(--background, Canvas)));
+  &:is(.list-links, [class*=list-links-]) {
+    a {
+      text-decoration: none;
+      display: block;
+      padding-block: var(--list-group-py, 0.5rem);
+      padding-inline: var(--list-group-px, 0.75rem);
+      &:is(:hover, :focus) {
+        background-color: var(--list-group-hover, color-mix(in srgb, CanvasText 5%, var(--background, Canvas)));
+      }
+      &:focus-visible {
+        outline: none;
+      }
     }
-    &:focus-visible {
-      outline: none;
+    *:first-child a:is(:hover, :focus) {
+      border-start-start-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
+      border-start-end-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
     }
-  }
-  *:first-child a:is(:hover, :focus) {
-    border-start-start-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
-    border-start-end-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
-  }
-  *:last-child a:is(:hover, :focus) {
-    border-end-start-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
-    border-end-end-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
+    *:last-child a:is(:hover, :focus) {
+      border-end-start-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
+      border-end-end-radius: calc(var(--list-group-radius, var(--border-radius, 0.188rem)) - 1px);
+    }
   }
 }
 
