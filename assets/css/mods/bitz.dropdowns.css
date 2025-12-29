@@ -86,4 +86,10 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
       margin-block-end: 0.5rem;
     }
   }
+  .close-dropdown {
+    position: fixed;
+    inset: 0;
+    display: block;
+    content: "";
+  }
 }
