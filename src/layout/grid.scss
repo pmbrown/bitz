@@ -1,7 +1,8 @@
 // ---------------------------------------------------------- 
 // Grid
 // ----------------------------------------------------------
-$grid-columns:    12 !default;
+$grid-fraction-columns:   12 !default;
+$grid-auto-columns:       12 !default;
 
 $grid-wrapper: (
   "display": grid,
@@ -11,9 +12,13 @@ $grid-wrapper: (
 
 @mixin grid-classes {
   :where(html) {
-    @for $value from 1 through $grid-columns {
+    @for $value from 1 through $grid-fraction-columns {
       --g-#{$value}: repeat(#{$value}, minmax(0, 1fr));
-    }  
+    }
+    
+    @for $value from 1 through $grid-auto-columns {
+      --ga-#{$value}: repeat(#{$value}, minmax(0, auto));
+    }
   }
   
   .grid {
@@ -22,9 +27,15 @@ $grid-wrapper: (
     }
   }
   
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value} {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value} {
+      --gtc: var(--ga-#{$value});
     }
   }
 }
@@ -36,9 +47,15 @@ $grid-wrapper: (
     }
   }
 
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value}-xl {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value}-xl {
+      --gtc: var(--ga-#{$value});
     }
   }
 }
@@ -50,9 +67,15 @@ $grid-wrapper: (
     }
   }
 
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value}-lg {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value}-lg {
+      --gtc: var(--ga-#{$value});
     }
   }
 }
@@ -64,9 +87,15 @@ $grid-wrapper: (
     }
   }
 
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value}-md {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value}-md {
+      --gtc: var(--ga-#{$value});
     }
   }
 }
@@ -78,9 +107,15 @@ $grid-wrapper: (
     }
   }
 
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value}-sm {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value}-sm {
+      --gtc: var(--ga-#{$value});
     }
   }
 }
@@ -92,9 +127,15 @@ $grid-wrapper: (
     }
   }
 
-  @for $value from 1 through $grid-columns {
+  @for $value from 1 through $grid-fraction-columns {
     .g-#{$value}-xs {
       --gtc: var(--g-#{$value});
+    }
+  }
+  
+  @for $value from 1 through $grid-auto-columns {
+    .ga-#{$value}-xs {
+      --gtc: var(--ga-#{$value});
     }
   }
 }

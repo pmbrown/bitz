@@ -11,6 +11,9 @@ $display: (
   "flex-inline": inline-flex,
   "grid": grid,
   "grid-inline": inline-grid,
+  "flow-root": flow-root,
+  "display-revert": revert,
+  "display-none": none,
 ) !default;
 
 $flex-direction: (

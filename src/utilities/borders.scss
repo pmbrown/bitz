@@ -1,7 +1,7 @@
 // ---------------------------------------------------------- 
 // Borders
 // ----------------------------------------------------------
-$borders: (
+$border-style: (
   "bd": border-style,
   "bd-t": border-block-start-style,
   "bd-b": border-block-end-style,
@@ -11,14 +11,22 @@ $borders: (
   "bd-e": border-inline-end-style,
 ) !default;
 
-@mixin border-classes {
+$border-radius: (
+  "rd-1": 0.188rem,
+  "rd-2": 0.375rem,
+  "rd-3": 0.5rem,
+  "rd-4": 0.75rem,
+  "rd-5": 1rem,
+) !default;
+
+@mixin border-style-classes {
   .bd, 
   [class*=bd-] {
-    border-width: var(--bd-width, 1px);
+    border-width: var(--bd-width, var(--border-width, 1px));
     border-color: var(--bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   
-  @each $name, $value in $borders {
+  @each $name, $value in $border-style {
     .#{$name} {
       #{$value}: var(--bd-style, solid);        
     }
@@ -29,8 +37,8 @@ $borders: (
   }
 }
 
-@mixin border-classes-xl {
-  @each $name, $value in $borders {
+@mixin border-style-classes-xl {
+  @each $name, $value in $border-style {
     .#{$name}-xl {
       #{$value}: var(--bd-style, solid);        
     }
@@ -41,8 +49,8 @@ $borders: (
   }
 }
 
-@mixin border-classes-lg {
-  @each $name, $value in $borders {
+@mixin border-style-classes-lg {
+  @each $name, $value in $border-style {
     .#{$name}-lg {
       #{$value}: var(--bd-style, solid);        
     }
@@ -53,8 +61,8 @@ $borders: (
   }
 }
 
-@mixin border-classes-md {
-  @each $name, $value in $borders {
+@mixin border-style-classes-md {
+  @each $name, $value in $border-style {
     .#{$name}-md {
       #{$value}: var(--bd-style, solid);        
     }
@@ -65,8 +73,8 @@ $borders: (
   }
 }
 
-@mixin border-classes-sm {
-  @each $name, $value in $borders {
+@mixin border-style-classes-sm {
+  @each $name, $value in $border-style {
     .#{$name}-sm {
       #{$value}: var(--bd-style, solid);        
     }
@@ -77,8 +85,8 @@ $borders: (
   }
 }
 
-@mixin border-classes-xs {
-  @each $name, $value in $borders {
+@mixin border-style-classes-xs {
+  @each $name, $value in $border-style {
     .#{$name}-xs {
       #{$value}: var(--bd-style, solid);        
     }
@@ -89,3 +97,209 @@ $borders: (
   }
 }
 
+// Border radius
+@mixin border-radius-classes {
+  .rd, 
+  [class*=rd-] {
+    border-start-start-radius: var(--rd-top-l);
+    border-start-end-radius: var(--rd-top-r);
+    border-end-start-radius: var(--rd-bottom-l);
+    border-end-end-radius: var(--rd-bottom-r);
+  }
+  
+  @each $name, $value in $border-radius {
+    .#{$name} {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-radius-classes-xl {
+  @each $name, $value in $border-radius {
+    .#{$name}-xl {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top-xl {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom-xl {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start-xl {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end-xl {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-radius-classes-lg {
+  @each $name, $value in $border-radius {
+    .#{$name}-lg {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top-lg {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom-lg {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start-lg {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end-lg {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-radius-classes-md {
+  @each $name, $value in $border-radius {
+    .#{$name}-md {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top-md {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom-md {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start-md {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end-md {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-radius-classes-sm {
+  @each $name, $value in $border-radius {
+    .#{$name}-sm {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top-sm {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom-sm {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start-sm {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end-sm {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-radius-classes-xs {
+  @each $name, $value in $border-radius {
+    .#{$name}-xs {
+      border-radius: #{$value};   
+    }
+
+    .#{$name}-top-xs {
+      --rd-top-l: #{$value};
+      --rd-top-r: #{$value};
+    }
+
+    .#{$name}-bottom-xs {
+      --rd-bottom-l: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+
+    .#{$name}-start-xs {
+      --rd-top-l: #{$value};
+      --rd-bottom-l: #{$value};  
+    }
+
+    .#{$name}-end-xs {
+      --rd-top-r: #{$value};
+      --rd-bottom-r: #{$value};     
+    }
+  }
+}
+
+@mixin border-classes {
+  @include border-style-classes;
+  @include border-radius-classes;
+}
+
+@mixin border-classes-xl {
+  @include border-style-classes-xl;
+  @include border-radius-classes-xl;
+}
+
+@mixin border-classes-lg {
+  @include border-style-classes-lg;
+  @include border-radius-classes-lg;
+}
+
+@mixin border-classes-md {
+  @include border-style-classes-md;
+  @include border-radius-classes-md;
+}
+
+@mixin border-classes-sm {
+  @include border-style-classes-sm;
+  @include border-radius-classes-sm;
+}
+
+@mixin border-classes-xs {
+  @include border-style-classes-xs;
+  @include border-radius-classes-xs;
+}

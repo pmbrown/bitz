@@ -26,6 +26,5 @@
   summary, [open]::details-content {
     padding-block: var(--accordion-py, 0.5rem);
     padding-inline: var(--accordion-px, 1rem);
-
   }
 }
