@@ -3,21 +3,21 @@
 [class*=accordion-] {
   color: var(--accordion-text, var(--text, CanvasText));
   margin-block-end: var(--accordion-mb, 1rem);
-  border: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--accordion-radius, var(--border-radius, 0.188rem));
   background-color: var(--accordion-bg, var(--background, Canvas));
   details {
     margin-block-end: 0;
     :is([open] summary) {
       margin-block-end: 0;
-      border-block-end: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+      border-block-end: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
     }
     :last-child {
       margin-block-end: 0;
     }
   }
   :not(:first-child) summary {
-    border-block-start: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-start: var(--accordion-bd-width, var(--border-width, 1px)) solid var(--accordion-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   summary, [open]::details-content {
     padding-block: var(--accordion-py, 0.5rem);
@@ -69,7 +69,7 @@ dialog[open]:is(.alert, [class*=alert-]) {
   vertical-align: baseline;
   padding-block: var(--badge-py, 0.375em);
   padding-inline: var(--badge-px, 0.65em);
-  border: var(--badge-bd-width, var(--border-width, 1px)) solid var(--badge-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--badge-bd-width, var(--border-width, 1px)) solid var(--badge-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--badge-radius, var(--border-radius, 0.188rem));
   background-color: var(--badge-bg, color-mix(in srgb, CanvasText 4%, var(--background, Canvas)));
 }
@@ -84,7 +84,7 @@ dialog[open]:is(.alert, [class*=alert-]) {
   max-inline-size: var(--card-width);
   padding-block: var(--card-py, 1rem);
   padding-inline: var(--card-px, 1rem);
-  border: var(--card-bd-width, var(--border-width, 1px)) solid var(--card-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--card-bd-width, var(--border-width, 1px)) solid var(--card-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--card-radius, var(--border-radius, 0.188rem));
   background-color: var(--card-bg, var(--background, Canvas));
   :is(p, ol, ul, dl) {
@@ -193,7 +193,7 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
     }
     &:not(ul, ol) :is(a, button):not(:first-child),
     &:is(ul, ol) li:not(:first-child) {
-      border-block-start: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+      border-block-start: var(--dropdown-bd-width, var(--border-width, 1px)) solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
     }
     &:not(ul, ol) :first-child:is(a, button),
     &:is(ul, ol) li:first-child *:is(a, button) {
@@ -225,7 +225,7 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
 [class*=list-group-], [class*=list-links-] {
   color: var(--list-group-text, CanvasText);
   max-inline-size: var(--list-group-width);
-  border: var(--list-group-bd-width, var(--border-width, 1px)) solid var(--list-group-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--list-group-bd-width, var(--border-width, 1px)) solid var(--list-group-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--list-group-radius, var(--border-radius, 0.188rem));
   background-color: var(--list-group-bg, var(--background, Canvas));
   &:is(ul, ol) {
@@ -233,7 +233,7 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
     padding-inline-start: 0;
   }
   *:not(:first-child) {
-    border-block-start: var(--list-group-bd-width, var(--border-width, 1px)) solid var(--list-group-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-start: var(--list-group-bd-width, var(--border-width, 1px)) solid var(--list-group-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   &:is(ol) {
     counter-reset: ol-list;
@@ -292,7 +292,7 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
   margin-block-start: var(--modal-top, 1rem);
   padding-block: var(--modal-py, 1rem);
   padding-inline: var(--modal-px, 1rem);
-  border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--modal-radius, var(--border-radius, 0.188rem));
   background-color: var(--modal-bg, var(--background, Canvas));
   overflow: auto;
@@ -321,19 +321,19 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
   }
   &:is(.offcanvas-start) {
     margin-inline-end: auto;
-    border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   &:is(.offcanvas-end) {
     margin-inline-start: auto;
-    border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   &:is(.offcanvas-top) {
     margin-block-end: auto;
-    border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   &:is(.offcanvas-bottom) {
     margin-block-start: auto;
-    border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
 }
 

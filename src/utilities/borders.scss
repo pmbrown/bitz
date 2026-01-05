@@ -22,7 +22,7 @@ $border-radius: (
 @mixin border-style-classes {
   .bd, 
   [class*=bd-] {
-    border-width: var(--bd-width, var(--border-width, 1px));
+    border-width: var(--bd-width, 1px);
     border-color: var(--bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   

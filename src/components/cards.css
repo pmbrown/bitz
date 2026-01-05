@@ -4,7 +4,7 @@
   max-inline-size: var(--card-width);
   padding-block: var(--card-py, 1rem);
   padding-inline: var(--card-px, 1rem);
-  border: var(--card-bd-width, var(--border-width, 1px)) solid var(--card-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--card-bd-width, var(--border-width, 1px)) solid var(--card-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--card-radius, var(--border-radius, 0.188rem));
   background-color: var(--card-bg, var(--background, Canvas));
   

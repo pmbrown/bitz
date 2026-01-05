@@ -16,7 +16,7 @@
     padding-block: var(--table-py, 0.35rem);
     padding-inline: var(--table-px, 0.75rem);
     background-color: var(--caption-bg, var(--background, Canvas));
-    border: var(--table-bd-width, var(--border-width, 1px)) solid var(--table-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border: var(--table-bd-width, var(--border-width, 1px)) solid var(--table-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
     border-block-end: none;
   }
   th {
@@ -25,7 +25,7 @@
   }
   thead, tbody, tfoot, tr, td, th {
     vertical-align: top;
-    border: 1px solid var(--table-bd, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+    border: var(--table-bd-width, var(--border-width, 1px)) solid var(--table-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   th, td {
     padding-block: var(--table-py, 0.4rem);

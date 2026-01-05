@@ -78,7 +78,7 @@ details:has(.dropdown, [class*=dropdown-], [class*=dropdown-body-]) {
     
     &:not(ul, ol) :is(a, button):not(:first-child),
     &:is(ul, ol) li:not(:first-child) {
-      border-block-start: 1px solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
+      border-block-start: var(--dropdown-bd-width, var(--border-width, 1px)) solid var(--dropdown-bd-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas)));
     }
     
     &:not(ul, ol) :first-child:is(a, button),

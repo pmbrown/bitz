@@ -3,8 +3,8 @@
   font-family: inherit;
   line-height: inherit;
   &:focus {
-    outline: 1.75px solid var(--input-focus, color-mix(in srgb, CanvasText 40%, var(--background, Canvas)));
-    outline-offset: 0;
+    outline: var(--input-focus-width, 1.75px) solid var(--input-focus-color, color-mix(in srgb, CanvasText 40%, var(--background, Canvas)));
+    outline-offset: var(--input-focus-offset, 0);
   }
   &:focus:not(:focus-visible) {
     outline: none;
@@ -27,7 +27,7 @@
   font-size: var(--form-fs, inherit);
   padding-block: var(--form-py, 0.313rem);
   padding-inline: var(--form-px, 0.65rem);
-  border: var(--form-bd-width, var(--border-width, 1px)) solid var(--form-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--form-bd-width, var(--border-width, 1px)) solid var(--form-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--form-radius, var(--border-radius, 0.188em));
   background-color: var(--form-bg, var(--background, Canvas));
 }
@@ -38,7 +38,7 @@
   font-size: var(--btn-fs, inherit);
   padding-block: var(--btn-py, 0.313rem);
   padding-inline: var(--btn-px, 0.9rem);
-  border: var(--btn-bd-width, var(--border-width, 1px)) solid var(--btn-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--btn-bd-width, var(--border-width, 1px)) solid var(--btn-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--btn-radius, var(--border-radius, 0.188em));
   background-color: var(--btn-bg, color-mix(in srgb, CanvasText 5%, var(--background, Canvas)));
   -webkit-appearance: button;
@@ -85,7 +85,7 @@
 }
 
 :where(fieldset, legend) {
-  border: var(--form-bd-width, var(--border-width, 1px)) solid var(--form-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--form-bd-width, var(--border-width, 1px)) solid var(--form-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--form-radius, var(--border-radius, 0.188em));
 }
 

@@ -9,7 +9,7 @@
   margin-block-start: var(--modal-top, 1rem);
   padding-block: var(--modal-py, 1rem);
   padding-inline: var(--modal-px, 1rem);
-  border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+  border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   border-radius: var(--modal-radius, var(--border-radius, 0.188rem));
   background-color: var(--modal-bg, var(--background, Canvas)); 
   overflow: auto;
@@ -44,21 +44,21 @@
 
   &:is(.offcanvas-start) {
     margin-inline-end: auto;
-    border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
 
   &:is(.offcanvas-end) {
     margin-inline-start: auto;
-    border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));  
+    border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));  
   }
   
   &:is(.offcanvas-top) {
     margin-block-end: auto;
-    border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
   
   &:is(.offcanvas-bottom) {
     margin-block-start: auto;
-    border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
   }
 }
