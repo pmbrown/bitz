@@ -1,4 +1,4 @@
-/*! Bitz v0.1 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
+/*! Bitz v0.1.0 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
 :where(:not([popover], dialog)) {
   margin: 0;
 }
