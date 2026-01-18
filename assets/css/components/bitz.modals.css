@@ -1,56 +1,58 @@
-/*! Bitz v0.1.0 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
-.modal,
-[class*=modal-] {
-  color: var(--modal-text, var(--text, CanvasText));
-  block-size: var(--modal-block, fit-content);
-  max-block-size: var(--modal-height, calc(100dvh - 2rem));
-  inline-size: var(--modal-inline, calc(100% - 6px - 2em));
-  max-inline-size: var(--modal-width, fit-content);
-  margin: auto;
-  margin-block-start: var(--modal-top, 1rem);
-  padding-block: var(--modal-py, 1rem);
-  padding-inline: var(--modal-px, 1rem);
-  border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
-  border-radius: var(--modal-radius, var(--border-radius, 0.188rem));
-  background-color: var(--modal-bg, var(--background, Canvas));
-  overflow: auto;
-  overscroll-behavior: contain;
-  :last-child {
-    margin-block-end: 0;
-  }
-  &::backdrop {
-    background-color: var(--modal-backdrop, color-mix(in srgb, black 50%, transparent));
-  }
-  &:is([class*=offcanvas-]) {
-    --modal-radius: 0;
-    margin: 0;
-    border: none;
-  }
-  &:is(.offcanvas-start, .offcanvas-end) {
-    --modal-block: 100%;
-    --modal-height: 100dvh;
-    --modal-width: 24rem;
-  }
-  &:is(.offcanvas-top, .offcanvas-bottom) {
-    --modal-block: 100%;
-    --modal-height: calc(33dvh - 2rem);
-    --modal-inline: 100%;
-    --modal-width: 100%;
-  }
-  &:is(.offcanvas-start) {
-    margin-inline-end: auto;
-    border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
-  }
-  &:is(.offcanvas-end) {
-    margin-inline-start: auto;
-    border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
-  }
-  &:is(.offcanvas-top) {
-    margin-block-end: auto;
-    border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
-  }
-  &:is(.offcanvas-bottom) {
-    margin-block-start: auto;
-    border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+/*! Bitz v0.2.0 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
+@layer components {
+  .modal,
+  [class*=modal-] {
+    color: var(--modal-text, var(--text, CanvasText));
+    block-size: var(--modal-block, fit-content);
+    max-block-size: var(--modal-height, calc(100dvh - 2rem));
+    inline-size: var(--modal-inline, calc(100% - 6px - 2em));
+    max-inline-size: var(--modal-width, fit-content);
+    margin: auto;
+    margin-block-start: var(--modal-top, 1rem);
+    padding-block: var(--modal-py, 1rem);
+    padding-inline: var(--modal-px, 1rem);
+    border: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    border-radius: var(--modal-radius, var(--border-radius, 0.188rem));
+    background-color: var(--modal-bg, var(--background, Canvas));
+    overflow: auto;
+    overscroll-behavior: contain;
+    :last-child {
+      margin-block-end: 0;
+    }
+    &::backdrop {
+      background-color: var(--modal-backdrop, color-mix(in srgb, black 50%, transparent));
+    }
+    &:is([class*=offcanvas-]) {
+      --modal-radius: 0;
+      margin: 0;
+      border: none;
+    }
+    &:is(.offcanvas-start, .offcanvas-end) {
+      --modal-block: 100%;
+      --modal-height: 100dvh;
+      --modal-width: 24rem;
+    }
+    &:is(.offcanvas-top, .offcanvas-bottom) {
+      --modal-block: 100%;
+      --modal-height: calc(33dvh - 2rem);
+      --modal-inline: 100%;
+      --modal-width: 100%;
+    }
+    &:is(.offcanvas-start) {
+      margin-inline-end: auto;
+      border-inline-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    }
+    &:is(.offcanvas-end) {
+      margin-inline-start: auto;
+      border-inline-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    }
+    &:is(.offcanvas-top) {
+      margin-block-end: auto;
+      border-block-end: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    }
+    &:is(.offcanvas-bottom) {
+      margin-block-start: auto;
+      border-block-start: var(--modal-bd-width, var(--border-width, 1px)) solid var(--modal-bd-color, var(--border-color, color-mix(in srgb, CanvasText 20%, var(--background, Canvas))));
+    }
   }
 }

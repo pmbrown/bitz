@@ -1,0 +1,12 @@
+/*! Bitz v0.2.0 | Copyright 2025 Phil Brown | MIT License (https://github.com/pmbrown/bitz/) */
+@layer utilities {
+  .vis-hidden, .vis-hidden-focus:not(:focus):not(:focus-within) {
+    position: absolute;
+    block-size: 1px;
+    inline-size: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

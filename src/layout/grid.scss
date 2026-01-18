@@ -4,138 +4,252 @@
 $grid-fraction-columns:   12 !default;
 $grid-auto-columns:       12 !default;
 
-$grid-wrapper: (
+$grid-container: (
   "display": grid,
   "grid-template-columns": var(--gtc),
   "grid-template-rows": var(--gtr),
 ) !default;
 
+@mixin grid-fraction-values {
+  @for $value from 1 through $grid-fraction-columns {
+    --g-#{$value}: repeat(#{$value}, minmax(0, 1fr));
+  }
+}
+
+@mixin grid-auto-values {
+  @for $value from 1 through $grid-auto-columns {
+    --ga-#{$value}: repeat(#{$value}, minmax(0, auto));
+  }
+}
+
+@mixin grid-fraction-variables {
+  :where(html) {
+    @include grid-fraction-values;
+  }
+}
+
+@mixin grid-auto-variables {
+  :where(html) {
+    @include grid-auto-values;
+  }
+}
+
+@mixin grid-container-class {
+  @layer layout {
+    .grid-columns {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-container-class-xl {
+  @layer layout {
+    .grid-columns-xl {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-container-class-lg {
+  @layer layout {
+    .grid-columns-lg {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-container-class-md {
+  @layer layout {
+    .grid-columns-md {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-container-class-sm {
+  @layer layout {
+    .grid-columns-sm {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-container-class-xs {
+  @layer layout {
+    .grid-columns-xs {
+      @each $name, $value in $grid-container {
+        #{$name}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value} {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes-xl {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value}-xl {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes-lg {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value}-lg {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes-md {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value}-md {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes-sm {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value}-sm {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-fraction-classes-xs {
+  @layer layout {
+    @for $value from 1 through $grid-fraction-columns {
+      .g-#{$value}-xs {
+        --gtc: var(--g-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value} {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes-xl {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value}-xl {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes-lg {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value}-lg {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes-md {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value}-md {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes-sm {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value}-sm {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
+@mixin grid-auto-classes-xs {
+  @layer layout {
+    @for $value from 1 through $grid-auto-columns {
+      .ga-#{$value}-xs {
+        --gtc: var(--ga-#{$value});
+      }
+    }
+  }
+}
+
 @mixin grid-classes {
   :where(html) {
-    @for $value from 1 through $grid-fraction-columns {
-      --g-#{$value}: repeat(#{$value}, minmax(0, 1fr));
-    }
-    
-    @for $value from 1 through $grid-auto-columns {
-      --ga-#{$value}: repeat(#{$value}, minmax(0, auto));
-    }
+    @include grid-fraction-values;
+    @include grid-auto-values;
   }
-  
-  .grid {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-  
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value} {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value} {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class;
+  @include grid-fraction-classes;
+  @include grid-auto-classes;  
 }
 
 @mixin grid-classes-xl {
-  .grid-xl {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value}-xl {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value}-xl {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class-xl;
+  @include grid-fraction-classes-xl;
+  @include grid-auto-classes-xl;
 }
 
 @mixin grid-classes-lg {
-  .grid-lg {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value}-lg {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value}-lg {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class-lg;
+  @include grid-fraction-classes-lg;
+  @include grid-auto-classes-lg;
 }
 
 @mixin grid-classes-md {
-  .grid-md {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value}-md {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value}-md {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class-md;
+  @include grid-fraction-classes-md;
+  @include grid-auto-classes-md;
 }
 
 @mixin grid-classes-sm {
-  .grid-sm {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value}-sm {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value}-sm {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class-sm;
+  @include grid-fraction-classes-sm;
+  @include grid-auto-classes-sm;
 }
 
 @mixin grid-classes-xs {
-  .grid-xs {
-    @each $name, $value in $grid-wrapper {
-      #{$name}: #{$value};
-    }
-  }
-
-  @for $value from 1 through $grid-fraction-columns {
-    .g-#{$value}-xs {
-      --gtc: var(--g-#{$value});
-    }
-  }
-  
-  @for $value from 1 through $grid-auto-columns {
-    .ga-#{$value}-xs {
-      --gtc: var(--ga-#{$value});
-    }
-  }
+  @include grid-container-class-xs;
+  @include grid-fraction-classes-xs;
+  @include grid-auto-classes-xs;
 }
